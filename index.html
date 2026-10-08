@@ -7,12 +7,12 @@
   <title>Mapas Mentais de Italiano — +300 Mapas Mentais Imprimíveis</title>
   <meta name="description" content="Aprenda italiano de forma visual com mais de 300 mapas mentais imprimíveis. Estude do básico ao avançado sem apostilas longas. Acesso imediato!">
   
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%2733%27 height=%27100%27 fill=%27%23008c45%27/%3E%3Crect x=%2733%27 width=%2734%27 height=%27100%27 fill=%27%23fff%27/%3E%3Crect x=%2767%27 width=%2733%27 height=%27100%27 fill=%27%23cd212a%27/%3E%3C/svg%3E">
   <!-- Fontes (somente os pesos usados) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="preload" as="font" type="font/woff2" href="fonts/inter.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="fonts/poppins-800.woff2" crossorigin>
   <!-- Imagem principal carregada com prioridade -->
-  <link rel="preload" as="image" href="assets/kit_mockup_v2.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/kit_mockup_v2_640.webp" imagesrcset="assets/kit_mockup_v2_640.webp 640w, assets/kit_mockup_v2.webp 1100w" imagesizes="(max-width: 700px) 92vw, 600px" fetchpriority="high">
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css">
@@ -38,7 +38,7 @@
 
       <!-- Mockup do Kit -->
       <div class="hero-mockup-wrapper">
-        <img src="assets/kit_mockup_v2.webp" alt="Mockup do Kit de Mapas Mentais de Italiano" class="hero-mockup-img" width="1448" height="1086" loading="eager" fetchpriority="high" decoding="async">
+        <img src="assets/kit_mockup_v2_640.webp" srcset="assets/kit_mockup_v2_640.webp 640w, assets/kit_mockup_v2.webp 1100w" sizes="(max-width: 700px) 92vw, 600px" alt="Mockup do Kit de Mapas Mentais de Italiano" class="hero-mockup-img" width="1100" height="825" loading="eager" fetchpriority="high" decoding="async">
       </div>
 
       <div style="margin-top: 36px; margin-bottom: 24px;">
@@ -51,11 +51,11 @@
         
         <div class="hero-student-proof">
           <div class="student-avatar-stack">
-            <img src="assets/depoimento_mariana_avatar.webp" alt="Mariana" class="avatar-stack-img" loading="lazy" decoding="async">
-            <img src="assets/depoimento_camila_avatar.webp" alt="Camila" class="avatar-stack-img" loading="lazy" decoding="async">
-            <img src="assets/depoimento_lucas_avatar.webp" alt="Lucas" class="avatar-stack-img" loading="lazy" decoding="async">
-            <img src="assets/hero_avatar_4.webp" alt="Cliente" class="avatar-stack-img" loading="lazy" decoding="async">
-            <img src="assets/hero_avatar_5.webp" alt="Cliente" class="avatar-stack-img" loading="lazy" decoding="async">
+            <img src="assets/depoimento_mariana_avatar.webp" alt="Mariana" class="avatar-stack-img" width="96" height="96" loading="lazy" decoding="async">
+            <img src="assets/depoimento_camila_avatar.webp" alt="Camila" class="avatar-stack-img" width="96" height="96" loading="lazy" decoding="async">
+            <img src="assets/depoimento_lucas_avatar.webp" alt="Lucas" class="avatar-stack-img" width="96" height="96" loading="lazy" decoding="async">
+            <img src="assets/hero_avatar_4.webp" alt="Cliente" class="avatar-stack-img" width="96" height="96" loading="lazy" decoding="async">
+            <img src="assets/hero_avatar_5.webp" alt="Cliente" class="avatar-stack-img" width="96" height="96" loading="lazy" decoding="async">
           </div>
           <span class="student-proof-text">Mais de 1.456 pessoas!</span>
         </div>
@@ -174,7 +174,7 @@
                 <p class="testimonial-quote">“Comprei achando que seria só mais um PDF comum, mas o material é muito mais organizado do que eu esperava. Os mapas são bonitos, fáceis de entender e dá vontade de continuar estudando.”</p>
               </div>
               <div class="testimonial-author">
-                <img src="assets/depoimento_mariana_avatar.webp" alt="Mariana S." class="testimonial-avatar">
+                <img src="assets/depoimento_mariana_avatar.webp" alt="Mariana S." class="testimonial-avatar" width="96" height="96" loading="lazy" decoding="async">
                 <div class="testimonial-author-info">
                   <h4>Mariana S.</h4>
                   <p>Cliente do Kit</p>
@@ -192,7 +192,7 @@
                 <p class="testimonial-quote">“Minha rotina é corrida e eu não consigo fazer aulas longas. Com o plano diário, estudo um pouco por dia e já sei exatamente qual material abrir. Ficou muito mais fácil manter uma rotina.”</p>
               </div>
               <div class="testimonial-author">
-                <img src="assets/depoimento_camila_avatar.webp" alt="Camila R." class="testimonial-avatar">
+                <img src="assets/depoimento_camila_avatar.webp" alt="Camila R." class="testimonial-avatar" width="96" height="96" loading="lazy" decoding="async">
                 <div class="testimonial-author-info">
                   <h4>Camila R.</h4>
                   <p>Cliente do Kit</p>
@@ -210,7 +210,7 @@
                 <p class="testimonial-quote">“Eu ainda não imprimi nada e mesmo assim estou usando normalmente pelo celular e pelo tablet. Os mapas ficam bem legíveis e consigo estudar em qualquer lugar.”</p>
               </div>
               <div class="testimonial-author">
-                <img src="assets/depoimento_lucas_avatar.webp" alt="Lucas F." class="testimonial-avatar">
+                <img src="assets/depoimento_lucas_avatar.webp" alt="Lucas F." class="testimonial-avatar" width="96" height="96" loading="lazy" decoding="async">
                 <div class="testimonial-author-info">
                   <h4>Lucas F.</h4>
                   <p>Cliente do Kit</p>
@@ -228,7 +228,7 @@
                 <p class="testimonial-quote">“As 500 frases com pronúncia foram o bônus que mais usei. Eu escuto, repito e treino até me sentir mais segura para falar.”</p>
               </div>
               <div class="testimonial-author">
-                <img src="assets/depoimento_patricia_avatar.webp" alt="Patrícia M." class="testimonial-avatar">
+                <img src="assets/depoimento_patricia_avatar.webp" alt="Patrícia M." class="testimonial-avatar" width="96" height="96" loading="lazy" decoding="async">
                 <div class="testimonial-author-info">
                   <h4>Patrícia M.</h4>
                   <p>Cliente do Kit</p>
@@ -246,7 +246,7 @@
                 <p class="testimonial-quote">“Sou professora de italiano e esse kit economizou muito meu tempo. Uso os mapas para explicar e revisar os conteúdos de forma mais visual com meus alunos.”</p>
               </div>
               <div class="testimonial-author">
-                <img src="assets/depoimento_fernanda_avatar.webp" alt="Fernanda R." class="testimonial-avatar">
+                <img src="assets/depoimento_fernanda_avatar.webp" alt="Fernanda R." class="testimonial-avatar" width="96" height="96" loading="lazy" decoding="async">
                 <div class="testimonial-author-info">
                   <h4>Fernanda R.</h4>
                   <p>Professora de Italiano</p>
@@ -266,7 +266,7 @@
                 <p class="testimonial-quote">“Comprei achando que seria só mais um PDF comum, mas o material é muito mais organizado do que eu esperava. Os mapas são bonitos, fáceis de entender e dá vontade de continuar estudando.”</p>
               </div>
               <div class="testimonial-author">
-                <img src="assets/depoimento_mariana_avatar.webp" alt="Mariana S." class="testimonial-avatar">
+                <img src="assets/depoimento_mariana_avatar.webp" alt="Mariana S." class="testimonial-avatar" width="96" height="96" loading="lazy" decoding="async">
                 <div class="testimonial-author-info">
                   <h4>Mariana S.</h4>
                   <p>Cliente do Kit</p>
@@ -284,7 +284,7 @@
                 <p class="testimonial-quote">“Minha rotina é corrida e eu não consigo fazer aulas longas. Com o plano diário, estudo um pouco por dia e já sei exatamente qual material abrir. Ficou muito mais fácil manter uma rotina.”</p>
               </div>
               <div class="testimonial-author">
-                <img src="assets/depoimento_camila_avatar.webp" alt="Camila R." class="testimonial-avatar">
+                <img src="assets/depoimento_camila_avatar.webp" alt="Camila R." class="testimonial-avatar" width="96" height="96" loading="lazy" decoding="async">
                 <div class="testimonial-author-info">
                   <h4>Camila R.</h4>
                   <p>Cliente do Kit</p>
@@ -302,7 +302,7 @@
                 <p class="testimonial-quote">“Eu ainda não imprimi nada e mesmo assim estou usando normalmente pelo celular e pelo tablet. Os mapas ficam bem legíveis e consigo estudar em qualquer lugar.”</p>
               </div>
               <div class="testimonial-author">
-                <img src="assets/depoimento_lucas_avatar.webp" alt="Lucas F." class="testimonial-avatar">
+                <img src="assets/depoimento_lucas_avatar.webp" alt="Lucas F." class="testimonial-avatar" width="96" height="96" loading="lazy" decoding="async">
                 <div class="testimonial-author-info">
                   <h4>Lucas F.</h4>
                   <p>Cliente do Kit</p>
@@ -320,7 +320,7 @@
                 <p class="testimonial-quote">“As 500 frases com pronúncia foram o bônus que mais usei. Eu escuto, repito e treino até me sentir mais segura para falar.”</p>
               </div>
               <div class="testimonial-author">
-                <img src="assets/depoimento_patricia_avatar.webp" alt="Patrícia M." class="testimonial-avatar">
+                <img src="assets/depoimento_patricia_avatar.webp" alt="Patrícia M." class="testimonial-avatar" width="96" height="96" loading="lazy" decoding="async">
                 <div class="testimonial-author-info">
                   <h4>Patrícia M.</h4>
                   <p>Cliente do Kit</p>
@@ -338,7 +338,7 @@
                 <p class="testimonial-quote">“Sou professora de italiano e esse kit economizou muito meu tempo. Uso os mapas para explicar e revisar os conteúdos de forma mais visual com meus alunos.”</p>
               </div>
               <div class="testimonial-author">
-                <img src="assets/depoimento_fernanda_avatar.webp" alt="Fernanda R." class="testimonial-avatar">
+                <img src="assets/depoimento_fernanda_avatar.webp" alt="Fernanda R." class="testimonial-avatar" width="96" height="96" loading="lazy" decoding="async">
                 <div class="testimonial-author-info">
                   <h4>Fernanda R.</h4>
                   <p>Professora de Italiano</p>

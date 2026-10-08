@@ -313,13 +313,17 @@ document.addEventListener('DOMContentLoaded', () => {
       let prevTranslateX = 0;
       let animationId = null;
 
+      // Largura medida uma vez e reaproveitada (evita reflow a cada frame)
+      let groupWidth = 0;
       const getGroupWidth = () => {
-        const groups = track.querySelectorAll('.carousel-group, .testimonials-group');
-        if (groups.length > 0) {
-          return groups[0].offsetWidth;
+        if (!groupWidth) {
+          const groups = track.querySelectorAll('.carousel-group, .testimonials-group');
+          groupWidth = groups.length > 0 ? groups[0].offsetWidth : track.offsetWidth / 2;
         }
-        return track.offsetWidth / 2;
+        return groupWidth;
       };
+      window.addEventListener('resize', () => { groupWidth = 0; });
+      window.addEventListener('load', () => { groupWidth = 0; });
 
       // Base speed per frame at 60fps
       const getSpeed = () => {
