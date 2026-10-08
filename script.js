@@ -447,6 +447,27 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   passUtmsToCheckout();
 
+  // Garante, no momento do clique, que todos os parâmetros da URL atual
+  // (window.location.search) sigam para qualquer link externo/de checkout.
+  const preserveSearchOnClick = (event) => {
+    const link = event.target.closest && event.target.closest('a[href]');
+    if (!link || !window.location.search) return;
+    const raw = link.getAttribute('href');
+    if (!raw || raw.charAt(0) === '#' || /^(mailto|tel|javascript):/i.test(raw)) return;
+    try {
+      const linkUrl = new URL(link.href, window.location.href);
+      if (linkUrl.origin === window.location.origin) return;
+      new URLSearchParams(window.location.search).forEach((value, key) => {
+        if (!linkUrl.searchParams.has(key)) linkUrl.searchParams.set(key, value);
+      });
+      link.href = linkUrl.toString();
+    } catch (err) {
+      console.error('Erro ao preservar parâmetros no link:', raw, err);
+    }
+  };
+  document.addEventListener('click', preserveSearchOnClick, true);
+  document.addEventListener('auxclick', preserveSearchOnClick, true);
+
   /* ==========================================
      9. SMOOTH SCROLL FOR ANCHOR LINKS
      ========================================== */
