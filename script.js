@@ -295,6 +295,25 @@ document.addEventListener('DOMContentLoaded', () => {
   initCurriculumTabs();
 
   /* ==========================================
+     6b. LAZY LOAD DAS IMAGENS (data-src)
+     ========================================== */
+  const lazyImgs = document.querySelectorAll('img[data-src]');
+  const carregarImg = (img) => {
+    if (img.dataset.srcset) img.srcset = img.dataset.srcset;
+    img.src = img.dataset.src;
+    img.removeAttribute('data-src');
+    img.removeAttribute('data-srcset');
+  };
+  if ('IntersectionObserver' in window) {
+    const ioImg = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { carregarImg(e.target); ioImg.unobserve(e.target); } });
+    }, { rootMargin: '300px 500px' });
+    lazyImgs.forEach((img) => ioImg.observe(img));
+  } else {
+    lazyImgs.forEach(carregarImg);
+  }
+
+  /* ==========================================
      7. DRAGGABLE INFINITE MARQUEE
      ========================================== */
   const initDraggableMarquees = () => {
@@ -331,8 +350,10 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       let lastTime = performance.now();
+      let visible = false;
 
       const update = (now) => {
+        if (!visible) { animationId = null; return; }
         const deltaTime = now - lastTime;
         lastTime = now;
 
@@ -354,8 +375,14 @@ document.addEventListener('DOMContentLoaded', () => {
         animationId = requestAnimationFrame(update);
       };
 
-      // Start looping
-      animationId = requestAnimationFrame(update);
+      // Só roda a animação enquanto o carrossel está na tela (economiza CPU)
+      const iniciar = () => { if (!animationId) { lastTime = performance.now(); animationId = requestAnimationFrame(update); } };
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver((entries) => {
+          visible = entries[0].isIntersecting;
+          if (visible) iniciar();
+        }, { rootMargin: '100px' }).observe(carousel);
+      } else { visible = true; iniciar(); }
 
       // Handle drag prevention on images
       track.querySelectorAll('img').forEach(img => {
